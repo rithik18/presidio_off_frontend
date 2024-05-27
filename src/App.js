@@ -11,9 +11,9 @@
         
             <Routes>
               <Route exact path="/" element={<Login/>} />
-              <Route path="/signup" element={<Signup/>} />
-              <Route path="/seller_dashboard" element={<Dashboard/>}/>
-              <Route path="/buyer_dashboard" element={<Dashboardbuy/>}/>
+              <Route exact path="/signup" element={<Signup/>} />
+              <Route exact path="/seller_dashboard" element={<Dashboard/>}/>
+              <Route exact path="/buyer_dashboard" element={<Dashboardbuy/>}/>
             </Routes>
         
       );
