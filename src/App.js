@@ -8,14 +8,14 @@
     
     const App = () => {
       return (
-        <Router exact path='/'>
+        
             <Routes>
-              <Route path="/" element={<Login/>} />
+              <Route exact path="/" element={<Login/>} />
               <Route path="/signup" element={<Signup/>} />
               <Route path="/seller_dashboard" element={<Dashboard/>}/>
               <Route path="/buyer_dashboard" element={<Dashboardbuy/>}/>
             </Routes>
-        </Router>
+        
       );
     };
     
