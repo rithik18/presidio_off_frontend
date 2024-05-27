@@ -15,10 +15,11 @@ const Dashboard = () => {
       const desc= String(document.getElementById('description').value).toLowerCase()
       const add= String(document.getElementById('address').value).toLowerCase()
       const email=sessionStorage.getItem('email')
+      const price=parseInt(document.getElementById('price').value)
   
       console.log(category , area ,city , hosp, school,desc,add )
   
-          if (!category || !area || !city || !hosp|| !school||!desc||!add ) {
+          if (!category || !area || !city || !hosp|| !school||!desc||!add ||!price) {
             toast.error("Please fill in all fields!");
             return;
           }
@@ -31,7 +32,7 @@ const Dashboard = () => {
           },
           body: JSON.stringify({
             'email':email,
-            "category":category ,"area":area ,"city":city , "hospital_count":hosp,"school_count":school,"Description":desc,"Address":add
+            "category":category ,"area":area ,"city":city , "hospital_count":hosp,"school_count":school,"Description":desc,"Address":add,'price':price
           })
         }).catch((e)=>toast.error(e));
   
@@ -47,6 +48,9 @@ toast.success("Added Successfully")
         console.log(sessionStorage.getItem('auth'))
         if(!sessionStorage.getItem('auth')){
             history('/')
+        }
+        if(sessionStorage.getItem('user_type')=='buyer'){
+          history('/buyer_dashboard')
         }
 })
   return (

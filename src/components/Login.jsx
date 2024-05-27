@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+
   const history = useNavigate(); 
   const [isChecked, setIsChecked] = useState(false);
+  useEffect(() => {
+     
+    if(sessionStorage.getItem('auth')=="true"){
+      history(sessionStorage.getItem('user_type')?'/buyer_dashboard':'seller_dashboard')
+    }
+  }, )
+  
 
   const handleToggle = async () => {
     setIsChecked(!isChecked);

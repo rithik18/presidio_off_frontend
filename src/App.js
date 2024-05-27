@@ -5,15 +5,16 @@
     import Signup from './components/Signup.jsx';
     import Dashboard from './components/SellerDashboard.jsx'
     import Dashboardbuy from './components/BuyerDashboard.jsx'
+    import PriceRangeFilter from './components/trial.jsx'
     
     const App = () => {
       return (
         
             <Routes>
               <Route exact path="/" element={<Login/>} />
-              <Route exact path="/signup" element={<Signup/>} />
-              <Route exact path="/seller_dashboard" element={<Dashboard/>}/>
-              <Route exact path="/buyer_dashboard" element={<Dashboardbuy/>}/>
+              <Route path="/signup" element={<Signup/>} />
+              <Route path="/seller_dashboard" element={<Dashboard/>}/>
+              <Route path="/buyer_dashboard" element={<Dashboardbuy/>}/>
             </Routes>
         
       );

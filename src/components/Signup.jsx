@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,6 +8,12 @@ const Signup = () => {
 
   const history = useNavigate();  // Access the history object
   const [isChecked, setIsChecked] = useState(false);
+  useEffect(() => {
+     
+    if(sessionStorage.getItem('auth')=="true"){
+      history(sessionStorage.getItem('user_type')=='buyer'?'/buyer_dashboard':'seller_dashboard')
+    }
+  }, )
 
   const handleToggle = async () => {
     setIsChecked(!isChecked);
