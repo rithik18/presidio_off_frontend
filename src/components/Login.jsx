@@ -27,7 +27,7 @@ const Login = () => {
         }
         else{
             
-                const response = await fetch('https://rentify-backend-8sr3anffp-rithik-harendar-ms-projects.vercel.app/api/login/', {
+                const response = await fetch('https://rentify-backend-rithik-harendar-ms-projects.vercel.app/api/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

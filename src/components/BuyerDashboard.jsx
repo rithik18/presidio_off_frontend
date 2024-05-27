@@ -8,7 +8,7 @@ const BuyerDashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const value=document.getElementById('default-search').value
-    const response = await fetch('https://rentify-backend-8sr3anffp-rithik-harendar-ms-projects.vercel.app/api/find/', {
+    const response = await fetch('https://rentify-backend-rithik-harendar-ms-projects.vercel.app/api/find/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
