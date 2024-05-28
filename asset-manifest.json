@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/presidio_off_frontend/static/css/main.16edf2ea.css",
-    "main.js": "/presidio_off_frontend/static/js/main.6a35a94b.js",
+    "main.css": "/presidio_off_frontend/static/css/main.9d69eefa.css",
+    "main.js": "/presidio_off_frontend/static/js/main.130b8313.js",
     "index.html": "/presidio_off_frontend/index.html",
-    "main.16edf2ea.css.map": "/presidio_off_frontend/static/css/main.16edf2ea.css.map",
-    "main.6a35a94b.js.map": "/presidio_off_frontend/static/js/main.6a35a94b.js.map"
+    "main.9d69eefa.css.map": "/presidio_off_frontend/static/css/main.9d69eefa.css.map",
+    "main.130b8313.js.map": "/presidio_off_frontend/static/js/main.130b8313.js.map"
   },
   "entrypoints": [
-    "static/css/main.16edf2ea.css",
-    "static/js/main.6a35a94b.js"
+    "static/css/main.9d69eefa.css",
+    "static/js/main.130b8313.js"
   ]
 }
