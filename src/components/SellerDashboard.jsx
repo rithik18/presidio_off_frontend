@@ -46,38 +46,50 @@ toast.success("Added Successfully")
     };
     useEffect(()=>{
         console.log(sessionStorage.getItem('auth'))
-        if(!sessionStorage.getItem('auth')){
+        if(sessionStorage.getItem('auth')=='false'){
             history('/')
         }
         if(sessionStorage.getItem('user_type')=='buyer'){
           history('/buyer_dashboard')
         }
 })
+const handleLogout = async (e) => {
+  e.preventDefault();
+  sessionStorage.setItem('auth','false');toast.dark('loggedout');
+  history('/')
+}
   return (
-    <div class="bg-gray-50 dark:bg-gray-900 h-svh my-auto">
+    <div class="bg-gray-50 dark:bg-gray-900 h-svh my-auto  overflow-auto">
+      {/* <div class="flex justify-around">
+        
+      <li><button class="px-4 py-2 text-white">Logout</button></li>
+      <li><button class="px-4 py-2 text-white">Post Details</button></li>
+      <li><button onClick={handleLogout}class="px-4 py-2 text-white">Logout</button></li>
+          
+      </div> */}
       <br />
       <ToastContainer/>
-       <form class="p-4 md:p-5 w-2/3 flex flex-col mx-auto justify-center items-center bg-gray-800 rounded-lg">
-                <div class="grid gap-4 mb-4 grid-cols-2 w-full self-center">
-                    <div class="col-span-2 flex justify-evenly">
-                      <div class='w-1/2 p-2'>
+       <form class="p-4 md:p-5 sm:w-2/3 w-full flex flex-col mx-auto justify-center items-center bg-gray-800 rounded-lg">
+                <div class="grid gap-4 mb-4 grid-cols-1 sm:grid-cols-2 w-full self-center">
+                    <div class="sm:col-span-1 col-span-2 ">
+                      <div class='p-2'>
 
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Area</label>
                         <input type="text" name="area" id="area" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required />
                       </div>
-                      <div class='w-1/2 p-2'>
+                      <div class='p-2'>
 
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
                         <input type="text" name="city" id="city" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required />
                       </div>
                     </div>
-                    <div class="col-span-2 flex justify-evenly">
-                      <div class='w-1/2 p-2'>
+                    <div class="sm:col-span-1 col-span-2 ">
+                      <div class='p-2'>
 
                       <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hosptial count within 2 kms</label>
                       <input type="number" name="hosp" id="hosp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="2" required />
                       </div>
-                      <div class='w-1/2 p-2'>
+                      <div class='p-2'>
 
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">School count within 2 kms</label>
                         <input type="number" name="school" id="school" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="2" required />

@@ -5,7 +5,7 @@
     import Signup from './components/Signup.jsx';
     import Dashboard from './components/SellerDashboard.jsx'
     import Dashboardbuy from './components/BuyerDashboard.jsx'
-    import PriceRangeFilter from './components/trial.jsx'
+    import App1 from './components/trial.jsx'
     
     const App = () => {
       return (
@@ -15,6 +15,7 @@
               <Route path="/signup" element={<Signup/>} />
               <Route path="/seller_dashboard" element={<Dashboard/>}/>
               <Route path="/buyer_dashboard" element={<Dashboardbuy/>}/>
+              <Route path='/trial' element={<App1/>}/>
             </Routes>
         
       );
